@@ -47,7 +47,7 @@ const useParticleBoard = (apiUrl: string, svgRef: React.RefObject<SVGSVGElement>
         const fetchParticles = async () => {
             try {
                 const response = await axios.get<Particle[]>(apiUrl);
-                const fetchedParticles = response.data.map((particle, index) => ({
+                const fetchedParticles = response.data.map((particle) => ({
                     ...particle,
                     x: Math.random() * particleBoardWidth,
                     y: Math.random() * particleBoardHeight,

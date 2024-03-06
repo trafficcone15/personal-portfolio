@@ -6,6 +6,7 @@ const ParticleBoardForm = ({ onHideLines, setParticles, particles, originalParti
     const [name, setName] = useState('');
     const [userId, setUserId] = useState<string | null>(null);
     const [userHasSubmitted, setUserHasSubmitted] = useState(false);
+    const apiUrl = import.meta.env.VITE_API_URL;
 
     useEffect(() => {
         // Check if the user has already submitted their name
@@ -21,10 +22,10 @@ const ParticleBoardForm = ({ onHideLines, setParticles, particles, originalParti
             // Update existing name
             try {
                 // Update particle in MongoDB
-                await axios.put(`http://localhost:8082/api/particles/${userId}`, { name });
+                await axios.put(`${apiUrl}/api/particles/${userId}`, { name });
 
                 // Retrieve updated particle from MongoDB
-                const getNewParticleResponse = await axios.get<Particle>(`http://localhost:8082/api/particles/${userId}`);
+                const getNewParticleResponse = await axios.get<Particle>(`${apiUrl}/api/particles/${userId}`);
                 let updatedParticle = getNewParticleResponse.data;
 
                 debugger;
@@ -39,7 +40,7 @@ const ParticleBoardForm = ({ onHideLines, setParticles, particles, originalParti
         } else {
             // Submit new name
             try {
-                const response = await axios.post("http://localhost:8082/api/particles", { name });
+                const response = await axios.post(`${apiUrl}/api/particles`, { name });
                 const newParticle = response.data.particle;
 
                 debugger;
@@ -71,7 +72,7 @@ const ParticleBoardForm = ({ onHideLines, setParticles, particles, originalParti
     const handleDelete = async () => {
         if (userId) {
             try {
-                await axios.delete(`http://localhost:8082/api/particles/${userId}`);
+                await axios.delete(`${apiUrl}/api/particles/${userId}`);
                 localStorage.removeItem('userId');
                 setUserHasSubmitted(false);
                 setUserId(null);

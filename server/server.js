@@ -7,7 +7,17 @@ const bodyParser = require("body-parser");
 
 const app = express();
 
-app.use(cors({ origin: true, credentials: true }));
+var whitelist = ['http://localhost:5173/', 'http://example2.com'];
+var corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+};
+app.use(cors(corsOptions));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));

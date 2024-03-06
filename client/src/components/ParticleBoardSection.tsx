@@ -8,7 +8,8 @@ import { animateOnScrollTo } from '../utils/generalUtilities';
 const ParticleBoardSection = () => {
     const svgRef = useRef<SVGSVGElement>(null);
     const [showLines, setShowLines] = useState<boolean>(true);
-    const { particles, setParticles, originalParticlesRef, particleBoardWidth, particleBoardHeight } = useParticleBoard('http://localhost:8082/api/particles', svgRef);
+    const apiUrl = import.meta.env.VITE_API_URL;
+    const { particles, setParticles, originalParticlesRef, particleBoardWidth, particleBoardHeight } = useParticleBoard(`${apiUrl}/api/particles`, svgRef);
 
     const hiddenElementsRef = useRef<NodeListOf<HTMLElement> | null>(null);
 

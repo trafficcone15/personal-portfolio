@@ -11,7 +11,9 @@ utilizing MongoDB, Express.js, React (with TypeScript), and Node.js.<br />
 Featured here is a unique mini project - a Digital Welcome Board.<br />
 It's a creative application of the MERN stack and RESTful API,<br />
 where visitors can leave their mark in real-time.<br />
-Explore below to see more of my skills and projects.`;
+Explore below to see more of my skills and projects.
+Take a look at the code on my GitHub <a href='https://github.com/trafficcone15/personal-portfolio' target="_blank">HERE!</a> 
+`;
 
     return (
         <div className="hero-section-container" id="top">
