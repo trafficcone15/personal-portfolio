@@ -1,0 +1,51 @@
+.contact-us-section-container {
+    background-color: #eae4f7;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    min-height: 660px;
+    width: 100%;
+
+    .form-section {
+        width: 32%;
+    }
+
+    h1, h2 {
+        font-size: 2rem;
+        padding-top: 50px;
+        padding-bottom: 1%;
+    }
+
+    h1,
+    h2 {
+        font-family: "Mulish", sans-serif;        
+        transform: translateY(-50px) scale(0);
+        transition: transform .7s ease;
+    }
+
+    p,
+    div {
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .contact-us-text {
+        padding-bottom: 1%;
+    }
+
+    .MuiTextField-root {
+        width: 100%;
+        /* Adjust the width as needed */
+    }
+
+    @media screen and (max-width: 1800px) {
+        .form-section {
+            width: 80%;
+        }
+    }
+
+    @media screen and (max-width: 880px) {
+        .form-section {
+            width: 85%;
+        }
+    }
+}

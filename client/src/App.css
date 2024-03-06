@@ -1,0 +1,10 @@
+#root {
+  margin: 0;
+}
+
+.enable-flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}

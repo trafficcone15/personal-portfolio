@@ -1,0 +1,89 @@
+.about-me-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-direction: column; // Default to column layout for smaller screens
+    align-items: center;
+    padding-top: 6%;
+    padding-bottom: 6%;
+    background-color: #c8bdec;
+    padding-left: 15%;
+    padding-right: 15%;
+
+    h1, h2 {
+        font-size: 2rem;
+        transform: translateY(-50px) scale(0);
+        transition: transform .7s ease;
+    }
+
+    h1,
+    h2 {
+        font-family: "Mulish", sans-serif;
+    }
+
+    p,
+    div {
+        font-family: "Montserrat", sans-serif;
+    }
+
+    .text-column {
+        flex: 1;
+        margin-right: 20px;
+    }
+
+    .image-column {
+        text-align: center;
+        shape-outside: circle(); /* Define the shape of the image for text wrapping */
+        margin-left: 20px; /* Create space for the image */
+        margin-bottom: 20px; /* Add margin to bottom to separate from text */
+
+        img {
+            border-radius: 50%;
+        }
+    }
+
+    .icon-container {
+        margin-top: 20px;
+        display: flex;
+        gap: 10px;
+        padding: 10px;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        transform: translateY(-50px) scale(0);
+        transition: transform .7s ease;
+    }
+
+    .icons {
+        width: 2em;
+        height: 2em;
+    }
+
+    @media screen and (min-width: 1150px) {
+        flex-direction: row; // Switch to row layout for larger screens
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .text-column, .image-column {
+        width: 100%; // Full width on smaller screens
+        margin: 20px 0; // Add some margin between stacked elements
+
+        @media screen and (min-width: 1150px) {
+            width: auto; // Auto width on larger screens
+            margin-right: 20px; // Margin only on the right side for larger screens
+        }
+    }
+
+    @media screen and (max-width: 880px) {
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    @media screen and (max-width: 530px) {
+        .icons {
+            width: 1.5em;
+            height: 1.5em;
+        }
+    }
+}

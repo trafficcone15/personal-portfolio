@@ -1,0 +1,15 @@
+# Node modules in both server and client folders
+server/node_modules/
+client/node_modules/
+
+# Environment variables in server folder
+server/.env
+
+# Build output of client
+client/build/
+
+# Logs
+*.log
+
+# Operating System files
+.DS_Store

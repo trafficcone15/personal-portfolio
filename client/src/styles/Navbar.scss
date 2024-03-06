@@ -1,0 +1,266 @@
+.navbar-container {
+    $cormenu: var(--cor1);
+    $corfonte: var(--cor2);
+    $corfundo: var(--cor3);
+    $corfonteH: var(--cor4);
+    $zinc-950: #0f0f12;
+
+    font-family: "Fredoka", sans-serif;
+
+    @mixin center() {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    *,
+    *:before,
+    *:after {
+        cursor: circle;
+        color: $corfonte;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        transition: all 0.2s;
+    }
+
+    .navbar {
+        --cor1: rgba(237, 254, 255, 0.4);
+
+        --cor2: #FFFFFF;
+        --cor3: #7c8db8;
+        --cor4: #4f7df0;
+
+        height: 50px;
+        background: rgba(128, 103, 208, 1);
+        border-radius: 20px 20px 0px 0px;
+        padding: 35px;
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        left: 0;
+        z-index: 11;
+
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        align-items: center;
+        transition: all 0.4s;
+
+        .socials {
+            a:not(:last-child) {
+                margin-right: 20px;
+            }
+        }
+
+        [data-tooltip] {
+            position: relative;
+            z-index: 2;
+            cursor: pointer;
+        }
+
+        /* Hide the tooltip content by default */
+        [data-tooltip]:before,
+        [data-tooltip]:after {
+            visibility: hidden;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+            filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            opacity: 0;
+            pointer-events: none;
+        }
+
+        /* Position tooltip above the element */
+        [data-tooltip]:before {
+            position: absolute;
+            top: -200%;
+            left: 50%;
+            margin-bottom: 5px;
+            margin-left: -80px;
+            padding: 7px;
+            width: 220px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            background-color: #000;
+            background-color: hsla(0, 0%, 20%, 0.9);
+            color: #fff;
+            content: attr(data-tooltip);
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.2;
+        }
+
+        /* Triangle hack to make tooltip look like a speech bubble */
+        [data-tooltip]:after {
+            position: absolute;
+            top: -200%;
+            left: 50%;
+            margin-left: -5px;
+            width: 0;
+            border-bottom: 5px solid #000;
+            border-bottom: 5px solid hsla(0, 0%, 20%, 0.9);
+            border-right: 5px solid transparent;
+            border-left: 5px solid transparent;
+            content: " ";
+            font-size: 0;
+            line-height: 0;
+        }
+
+        /* Show tooltip content on hover */
+        [data-tooltip]:hover:before,
+        [data-tooltip]:hover:after {
+            visibility: visible;
+            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=100)";
+            opacity: 1;
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+
+            li {
+                list-style: none;
+            }
+        }
+
+        .line1,
+        .line2,
+        .line3 {
+            width: 100px;
+            cursor: pointer;
+            transition: 0.3s;
+            background: $corfonte;
+            height: 10px;
+            position: relative;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.09) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px,
+                rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px,
+                rgba(0, 0, 0, 0.09) 0px 32px 16px;
+        }
+
+        .line2 {
+            transition: 0.8s;
+        }
+
+        .line3 {
+            transition: 0.3s;
+
+            top: 10px;
+        }
+
+        .line1 {
+            transition: 0.3s;
+            bottom: 10px;
+        }
+
+        .actve {
+            .navbar {
+                flex-direction: row;
+                height: calc(100vh - 100px);
+            }
+
+            .line1 {
+                bottom: -10px;
+                transform: rotate(45deg);
+                background: red;
+                cursor: pointer;
+            }
+
+            .line3 {
+                top: -10px;
+                transform: rotate(-45deg);
+                background: red;
+                cursor: pointer;
+            }
+
+            .line2 {
+                transform: scale(0);
+                opacity: 0;
+            }
+        }
+    }
+
+    .actve.navbar {
+        height: 700px;
+        flex-direction: column;
+        text-align: right;
+        background: rgba(0, 0, 0, 0.9);
+
+        #hamburger {
+            display: grid;
+            transform: scale(0.4);
+        }
+
+        .Button {
+            display: flex;
+        }
+
+        h1 {
+            display: none;
+        }
+
+        ul {
+            text-align: center;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            li {
+                a {
+                    display: flex;
+                    font-size: 25px;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+    #hamburger {
+        cursor: pointer;
+        transform: scale(0);
+        display: none;
+    }
+
+    @mixin grid() {
+        display: grid;
+        place-items: center;
+    }
+
+    @media screen and (max-width: 800px) {
+        #hamburger {
+            display: grid;
+            transform: scale(0.3);
+        }
+
+        .navbar {
+            ul {
+                gap: 20px;
+            }
+
+        }
+
+        .Button {
+            display: none;
+        }
+
+        ul li a {
+            display: none;
+        }
+    }
+
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(359deg);
+        }
+    }
+
+    .icon {
+        height: 22px;
+    }
+}

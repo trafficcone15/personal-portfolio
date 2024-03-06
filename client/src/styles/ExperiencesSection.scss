@@ -1,0 +1,167 @@
+.experiences-section-container {
+    $text-color: #444;
+    $title-color: #3c3c3c;
+    $bg-color: #f9f9f9;
+    $secondary-bg-color: #ecdfbd;
+
+    $progressbar-bg: #ececec;
+    $progressbar-color: #34495e;
+
+    a {
+        color: inherit;
+        text-decoration: none;
+    }
+
+    h1 {        
+        transform: translateY(-50px) scale(0);
+        transition: transform .7s ease;
+    }
+
+    h1, h2 {
+        font-family: "Mulish", sans-serif;
+    }
+
+    p, div {
+        font-family: "Montserrat", sans-serif;
+    }
+
+    section {
+        position: relative;
+        width: 100%;
+    }
+
+    .experience {
+        background: $secondary-bg-color;
+        padding: 50px 0;
+        overflow-x: hidden;
+
+        .content {
+            text-align: center;
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            ul {
+                padding: 50px 0;
+                list-style-type: none;
+
+                li {
+                    background: $bg-color;
+                    position: relative;
+                    margin-left: 20px;
+                    width: 5px;
+                    padding-bottom: 40px;
+
+                    &:last-child {
+                        padding-bottom: 7px;
+                    }
+
+                    &:before {
+                        content: '';
+                        background: $secondary-bg-color;
+                        position: absolute;
+                        left: 50%;
+                        top: 0;
+                        -webkit-transform: translateX(-50%);
+                        transform: translateX(-50%);
+                        width: 20px;
+                        height: 20px;
+                        border: 4px solid $bg-color;
+                    }
+
+                    .hidden {
+                        opacity: 0;
+                        margin-left: 10vw;
+                    }
+
+                    .experience-content {
+                        background: $bg-color;
+                        position: relative;
+                        top: 7px;
+                        left: 48px;
+                        width: calc(100vw - 100px);
+                        padding: 20px;
+                        text-align: center;
+                        -webkit-border-radius: 0 5px 5px;
+                        -moz-border-radius: 0 5px 5px;
+                        border-radius: 0 5px 5px;
+
+                        h2 {
+                            font-size: 1.5em;
+                            color: $title-color;
+                            padding-bottom: 10px;
+                        }
+
+                        .experience-time {
+                            color: #777;
+                            font-size: 1.1em;
+                            padding-bottom: 10px;
+                        }
+
+                        p {
+                            color: #1a1a1a;
+                            font-size: .95em;
+                        }
+
+                        &:before {
+                            content: '';
+                            background: $bg-color;
+                            position: absolute;
+                            top: 0;
+                            left: -35px;
+                            width: 35px;
+                            height: 5px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @media screen and (min-width: 960px) {
+        .experience {
+            .content {
+                ul {
+                    li {
+                        margin: 0 auto;
+
+                        .experience-content {
+                            width: 40vw;
+                        }
+
+                        &:nth-child(odd) .experience-content {
+                            left: 63px;
+                        }
+
+                        &:nth-child(odd) .experience-content:before {
+                            left: -50px;
+                            width: 50px;
+                        }
+
+                        &:nth-child(even) .experience-content {
+                            left: calc(-40vw - 57px);
+                            -webkit-border-radius: 5px 0px 5px 5px;
+                            -moz-border-radius: 5px 0px 5px 5px;
+                            border-radius: 5px 0px 5px 5px;
+                        }
+
+                        &:nth-child(even) .experience-content:before {
+                            left: auto;
+                            right: -50px;
+                            width: 50px;
+                        }
+
+                        &:nth-child(odd) .hidden {
+                            margin-left: 10vw;
+                        }
+
+                        &:nth-child(even) .hidden {
+                            margin-left: -10vw;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
