@@ -10,8 +10,8 @@
     align-items: center;
 
     .section-container {
-        padding-left: 5%;
-    padding-right: 5%;
+        padding-left: 10%;
+        padding-right: 10%;
         position: absolute;
         width: 100%;
         top: 60%;
@@ -19,10 +19,25 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        flex-direction: row; // Default layout for larger screens
+        flex-direction: row;
+
+        div {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+
+            .source-link {
+                opacity: 0;
+                transition: opacity 2s ease-in-out;
+            }
+            
+            .source-link.visible {
+                opacity: 1;
+            }
+        }
 
         .welcome-text {
-            width: 50%;
+            width: 100%;
         }
 
         .coding-lottie-animation {
@@ -34,16 +49,19 @@
             text-align: right;
         }
 
-        // Media query for smaller screens
         @media (max-width: 700px) {
-            flex-direction: column; // Stack items vertically with SVG below text
+            flex-direction: column;
 
-            .welcome-text{
-                width: 100%; // Full width for both elements
+            div {
+                width: 100%;
+            }
+
+            .welcome-text {
+                width: 100%;
             }
 
             .coding-lottie-animation {
-                width: 50%; // Full width for both elements
+                width: 50%;
             }
         }
     }

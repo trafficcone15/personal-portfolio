@@ -13,7 +13,6 @@ const AnimatedText: React.FC<AnimatedText> = ({ heading, subText, className }) =
             bindEvents: function () {
                 this.settings.letters.forEach(letter => {
                     const text = letter.textContent?.trim() || '';
-                    // Split by words instead of characters
                     const spanizedText = text.split(" ").map(word => {
                         return `<span>${word} </span>`;
                     }).join("");

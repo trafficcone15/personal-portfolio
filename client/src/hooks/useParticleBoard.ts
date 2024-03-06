@@ -43,7 +43,6 @@ const useParticleBoard = (apiUrl: string, svgRef: React.RefObject<SVGSVGElement>
     }, [svgRef]);
 
     useEffect(() => {
-        // Function to fetch particles
         const fetchParticles = async () => {
             try {
                 const response = await axios.get<Particle[]>(apiUrl);
@@ -67,9 +66,7 @@ const useParticleBoard = (apiUrl: string, svgRef: React.RefObject<SVGSVGElement>
             fetchParticles();
         }
     }, [apiUrl, particleBoardWidth, particleBoardHeight]);
-
-    // Other hook logic here (e.g., handling user actions, resizing, etc.)
-
+    
     return {
         particles,
         setParticles,

@@ -18,24 +18,22 @@ const ExperiencesSection = () => {
     }, []);
 
     const handleScroll = () => {
+        animateOnScrollTo(headingRef);
+    
         if (!hiddenElementsRef.current) return;
-
-        const windowHeight = window.innerHeight;
-        const bottomOfWindow = window.scrollY + windowHeight;
-
+    
         hiddenElementsRef.current.forEach((element) => {
             const rect = element.getBoundingClientRect();
             const bottomOfObject = rect.top + rect.height;
-
-            if (bottomOfWindow > bottomOfObject) {
+    
+            if (window.scrollY + window.innerHeight > bottomOfObject) {
                 element.style.transition = 'opacity 1.2s, margin-left 1.2s';
                 element.style.opacity = '1';
                 element.style.marginLeft = '0';
             }
         });
-
-        animateOnScrollTo(headingRef);
     };
+    
 
     return (
         <div className='experiences-section-container' id="experiences">

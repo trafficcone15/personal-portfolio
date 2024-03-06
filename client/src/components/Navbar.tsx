@@ -3,6 +3,7 @@ import React, { useEffect, useState, useRef } from "react";
 import { useNavigate } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faArrowCircleUp, faEnvelope } from "@fortawesome/free-solid-svg-icons";
+import { faGithub } from "@fortawesome/free-brands-svg-icons"
 
 const Navbar: React.FC = () => {
     const [isActive, setIsActive] = useState(false);
@@ -31,7 +32,7 @@ const Navbar: React.FC = () => {
             });
         }
     };
-    
+
     const navigate = useNavigate();
 
     const handleNavClick = (scrollLocation: string) => {
@@ -74,7 +75,10 @@ const Navbar: React.FC = () => {
                         <a onClick={() => handleNavClick('contact-me')}>Contact me</a>
                     </li>
                     <li className="socials">
-                        <a className="no-underline" data-tooltip="showellross@gmail.com"><FontAwesomeIcon className="icon" icon={faEnvelope} /></a>
+                        <a onClick={() => setIsActive(false)} className="no-underline" data-tooltip="showellross@gmail.com"><FontAwesomeIcon className="icon" icon={faEnvelope} /></a>
+                    </li>
+                    <li className="socials">
+                        <a onClick={() => setIsActive(false)} className="no-underline" href="https://github.com/trafficcone15?tab=repositories" target="_blank"><FontAwesomeIcon className="icon" icon={faGithub} /></a>
                     </li>
                 </ul>
                 <div

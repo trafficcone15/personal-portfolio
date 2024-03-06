@@ -47,7 +47,6 @@ const Carousel: React.FC = () => {
         if (!selectedCarouselItem) 
             return;
 
-        // Fallback for when there are no more items in the direction
         if (!selectedCarouselItem.length) {
             if (elementTrigger.includes("next")) {
                 selectedCarouselItem = $(".carousel div:first");
@@ -56,17 +55,14 @@ const Carousel: React.FC = () => {
             }
         }
 
-        // Reset all classes
         $(".carousel div").removeClass("selected next previous next-right-second previous-left-second hide-left hide-right");
 
-        // Assign new classes
         selectedCarouselItem.addClass("selected");
         selectedCarouselItem.next().addClass("next");
         selectedCarouselItem.next().next().addClass("next-right-second").nextAll().addClass("hide-right");
         selectedCarouselItem.prev().addClass("previous");
         selectedCarouselItem.prev().prev().addClass("previous-left-second").prevAll().addClass("hide-left");
 
-        // Update description and skill icons
         const selectedImageAltTag = selectedCarouselItem.find("img").attr("alt");
         const selectedDescription = contentForCarousel[selectedImageAltTag as keyof typeof contentForCarousel];
 
