@@ -22,7 +22,7 @@ const Carousel: React.FC = () => {
     const hiddenElementsRef = useRef<NodeListOf<HTMLElement> | null>(null);
 
     useEffect(() => {
-        hiddenElementsRef.current = document.querySelectorAll('h1, .carousel-description');
+        hiddenElementsRef.current = document.querySelectorAll('h1');
         window.addEventListener('scroll', handleScroll);
 
         return () => {

@@ -15,6 +15,7 @@
         font-size: 2rem;
         transform: translateY(-50px) scale(0);
         transition: transform .7s ease;
+        padding-bottom: 50px;
     }
 
     h2 {
@@ -30,8 +31,6 @@
         margin-top: 10px;
         margin-left: 30%;
         margin-right: 30%;
-        transform: translateY(-50px) scale(0);
-        transition: transform 0.8s ease;
 
         a {
             color: #6c0080;
@@ -178,8 +177,6 @@
     }
 
     @media screen and (max-width: 1600px) {
-        height: 1300px;
-
         .carousel {
             height: 280px;
 
@@ -236,7 +233,7 @@
         }
 
         .carousel {
-            height: 180px;
+            height: 200px;
 
             div {
                 height: 150px;
@@ -292,7 +289,7 @@
     }
 
     @media screen and (max-width: 600px) {
-        height: 1500px;
+        height: 1590px;
 
         .carousel-description {
             margin-left: 5%;
@@ -300,7 +297,7 @@
         }
 
         .carousel {
-            height: 140px;
+            height: 180px;
 
             div {
                 height: 110px;
