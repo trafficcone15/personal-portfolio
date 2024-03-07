@@ -1,12 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 
-const useParticleBoard = (apiUrl: string, svgRef: React.RefObject<SVGSVGElement>) => {
+const useParticleBoard = (apiUrl: string, svgContainerRef: React.RefObject<HTMLDivElement>) => {
     const [particles, setParticles] = useState<Particle[]>([]);
     const originalParticlesRef = useRef<Particle[]>([]);
     const [particleBoardWidth, setParticleBoardWidth] = useState<number>(0);
     const [particleBoardHeight, setParticleBoardHeight] = useState<number>(0);
-    const [haveParticlesBeenFetched, setHaveParticlesBeenFetched] =  useState<boolean>(false);
     const [userId, setUserId] = useState<string | null>(null);
 
     const debounce = <F extends (...args: any[]) => void>(
@@ -24,15 +23,17 @@ const useParticleBoard = (apiUrl: string, svgRef: React.RefObject<SVGSVGElement>
         // This hook will make the board responsive
 
         const setBoardSize = () => {
-            if (svgRef.current) {
-                setParticleBoardWidth(svgRef.current.clientWidth);
-                setParticleBoardHeight(svgRef.current.clientHeight);
+            if (svgContainerRef.current) {
+                setParticleBoardWidth(svgContainerRef.current.clientWidth);
+                setParticleBoardHeight(svgContainerRef.current.clientHeight);
             }
         };
 
         // Debounce function to help prevent performance issues when testing responsivess and consistently resizing browser 
         const handleResize = debounce(setBoardSize, 250);
 
+
+        debugger;
         // Set initial size
         setBoardSize();
 
@@ -41,7 +42,7 @@ const useParticleBoard = (apiUrl: string, svgRef: React.RefObject<SVGSVGElement>
         return () => {
             window.removeEventListener('resize', handleResize);
         };
-    }, [svgRef]);
+    }, [svgContainerRef]);
 
     useEffect(() => {
         const fetchParticles = async () => {
@@ -58,10 +59,8 @@ const useParticleBoard = (apiUrl: string, svgRef: React.RefObject<SVGSVGElement>
                 if (fetchedParticles)
                     setParticles(fetchedParticles);
                 originalParticlesRef.current = fetchedParticles;
-                setHaveParticlesBeenFetched(true);
             } catch (error) {
                 console.error('Error fetching particles:', error);
-                setHaveParticlesBeenFetched(false);
             }
         };
 
@@ -79,8 +78,7 @@ const useParticleBoard = (apiUrl: string, svgRef: React.RefObject<SVGSVGElement>
         particleBoardHeight,
         setParticleBoardHeight,
         userId,
-        setUserId,
-        haveParticlesBeenFetched
+        setUserId
     };
 };
 

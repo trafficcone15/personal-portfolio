@@ -6,20 +6,6 @@
     align-items: center;
     flex-direction: column;
 
-    .loading-container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column;
-        height: 100%;
-        text-align: center;
-    }
-
-    .loading-container p {
-        margin-top: 10px;
-        font-size: 1.2em;
-    }
-
     h1,
     h2 {
         font-family: "Mulish", sans-serif;
@@ -103,7 +89,8 @@
         align-items: center;
         text-align: center;
         margin-top: 1%;
-        margin-bottom: 1%;
+        margin-bottom: 1%;        
+        position: relative;
 
         .svg-particle-board {
             width: 100%;
@@ -113,6 +100,20 @@
             max-width: 1500px;
             height: 200px;
             border: 1px solid black;
+        }        
+
+        .loading-container {
+            position: absolute;
+            top: 35%;
+            transform: translateY(-35%);
+            left: 50%;
+            transform: translatex(-50%);
+            height: 100%;
+            text-align: center;
+        }
+    
+        .loading-container p {
+            font-size: 1.2em;
         }
     }
 

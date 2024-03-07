@@ -3,6 +3,6 @@ type ParticleBoardCanvas = {
     showLines: boolean;
     particleBoardWidth: number;
     particleBoardHeight: number;
-    svgRef: Ref;
-    setIsCanvasLoaded: (boolean) => void;
+    svgContainerRef: Ref;
+    onParticlesRendered: (hasBeenRendered: boolean) => void;
 }
