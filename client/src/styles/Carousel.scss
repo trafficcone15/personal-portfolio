@@ -31,7 +31,13 @@
         margin-left: 30%;
         margin-right: 30%;
         transform: translateY(-50px) scale(0);
-        transition: transform 1.8s ease;
+        transition: transform 0.8s ease;
+
+        a {
+            color: #6c0080;
+            font-weight: bold;
+            text-decoration: underline;
+        }
     }
 
     .descriptions {

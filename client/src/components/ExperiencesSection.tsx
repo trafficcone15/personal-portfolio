@@ -8,7 +8,7 @@ const ExperiencesSection = () => {
     const headingRef = useRef<NodeListOf<HTMLElement> | null>(null);
 
     useEffect(() => {
-        hiddenElementsRef.current = document.querySelectorAll('.experience .content .hidden');
+        hiddenElementsRef.current = document.querySelectorAll('.experience-container');
         headingRef.current = document.querySelectorAll('h1');
         window.addEventListener('scroll', handleScroll);
 
@@ -19,21 +19,29 @@ const ExperiencesSection = () => {
 
     const handleScroll = () => {
         animateOnScrollTo(headingRef);
-    
+
         if (!hiddenElementsRef.current) return;
-    
+
         hiddenElementsRef.current.forEach((element) => {
             const rect = element.getBoundingClientRect();
-            const bottomOfObject = rect.top + rect.height;
-    
-            if (window.scrollY + window.innerHeight > bottomOfObject) {
-                element.style.transition = 'opacity 1.2s, margin-left 1.2s';
-                element.style.opacity = '1';
-                element.style.marginLeft = '0';
+
+            const isVisible = (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+
+            if (isVisible) {
+                const experienceSections = element.getElementsByClassName('hidden');
+                Array.from(experienceSections).forEach((section: Element) => {
+                    (section as HTMLElement).style.transition = 'opacity 1.2s, margin-left 1.2s';
+                    (section as HTMLElement).style.opacity = '1';
+                    (section as HTMLElement).style.marginLeft = '0';
+                });
             }
         });
     };
-    
 
     return (
         <div className='experiences-section-container' id="experiences">
@@ -42,7 +50,7 @@ const ExperiencesSection = () => {
                     <h1>Experiences</h1>
                     <ul>
                         {contentForExperience.map((experience, index: number) => (
-                            <li key={index}>
+                            <li className='experience-container' key={index}>
                                 <div className="experience-content hidden">
                                     <h2>{experience.experience}</h2>
                                     <div className="experience-time">{experience.duration}</div>

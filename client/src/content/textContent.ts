@@ -1,7 +1,10 @@
 export const contentForCarousel = {
     "Kj to Calorie Converter": {
         "descriptionHeader": "Kj to Calorie Converter",
-        "descriptionText": `In <b>New Zealand</b>, most food items are labeled with their <b>energy value in kilojoules (Kj)</b>.<br /><br />
+        "descriptionText": `
+        <a href='https://github.com/trafficcone15/KJToCalorieConverter' target="_blank">Click HERE! to take a look at the code in my github.</a><br /><br />
+        
+        In <b>New Zealand</b>, most food items are labeled with their <b>energy value in kilojoules (Kj)</b>.<br /><br />
 
         To provide a convenient solution for <b>converting Kj to calories</b>, I developed a user-friendly mobile application.<br /><br />
 
@@ -14,7 +17,10 @@ export const contentForCarousel = {
     },
     "Income Related Rent App": {
         "descriptionHeader": "Income Related Rent App",
-        "descriptionText": `Income Related Rent App is a sophisticated mobile application designed to simplify and streamline the financial planning associated with <b>rental payments</b> in <b>New Zealand</b>.<br /><br />
+        "descriptionText": `
+        <a href='https://github.com/trafficcone15/income-rent-and-tax-calculator' target="_blank">Click HERE! to take a look at the code in my github.</a><br /><br />
+        
+        Income Related Rent App is a sophisticated mobile application designed to simplify and streamline the financial planning associated with <b>rental payments</b> in <b>New Zealand</b>.<br /><br />
         
         This <b>Xamarin Android</b> app elegantly tackles the complexity of the income-related rent system by integrating features for calculating <b>rent based</b> on <b>income</b>.<br /><br />
 
@@ -32,9 +38,7 @@ export const contentForCarousel = {
         
         Its intuitive design allows for quick navigation and an enjoyable user experience.<br /><br />
         
-        The "Income Related Rent App" stands out as a practical, user-friendly tool for anyone looking to manage their rental and financial obligations with greater ease and precision.<br /><br />
-        
-        Click <a href='https://github.com/trafficcone15/income-rent-and-tax-calculator' target="_blank">HERE!</a> to take a look at the code in my github.
+        The "Income Related Rent App" stands out as a practical, user-friendly tool for anyone looking to manage their rental and financial obligations with greater ease and precision.        
         `,
         "skillIcons": ["c-sharp", "xamarin", "sqlite", "android"]
     },
@@ -59,7 +63,10 @@ export const contentForCarousel = {
     },
     "TEMPRO Website": {
         "descriptionHeader": "TEMPRO Website",
-        "descriptionText": `The <b>TEMPRO</b> organization goes beyond traditional recruiting services, offering an array of training programs tailored for companies, <b>CEOs</b>, and <b>job seekers</b> alike.<br /><br />
+        "descriptionText": `
+        <a href='https://temprodiversitysolutions.au/' target="_blank">Click HERE! to go to the TEMPRO Website to have a look for yourself.</a><br /><br />
+        
+        The <b>TEMPRO</b> organization goes beyond traditional recruiting services, offering an array of training programs tailored for companies, <b>CEOs</b>, and <b>job seekers</b> alike.<br /><br />
 
         To showcase their multifaceted offerings and facilitate seamless interaction, I led the development and design of their dynamic website.<br /><br />
 
@@ -73,16 +80,17 @@ export const contentForCarousel = {
 
         From concept to execution, I focused on delivering a user-centric experience, combining intuitive design with cutting-edge technology.<br /><br />
 
-        The result is a visually stunning and functionally robust website that reflects TEMPRO's commitment to excellence and innovation.<br /><br />
-        
-        Click <a href='https://temprodiversitysolutions.au/' target="_blank">HERE!</a> to go to the TEMPRO Website to have a look for yourself.
+        The result is a visually stunning and functionally robust website that reflects TEMPRO's commitment to excellence and innovation.       
         `,
         "skillIcons": ["angular", "figma", "typescript", "javascript", "material-ui", "firebase",  "sass", "contentful", "node-js"]
         
     },
     "Insights Tool": {
         "descriptionHeader": "Insights Tool",
-        "descriptionText": `When <b>Zeta People Solutions</b>, the parent company of TEMPRO, approached me with the challenge of transforming their intricate internal tool into an accessible online solution, I eagerly took on the task.<br /><br />
+        "descriptionText": `
+        <a href='https://zetapeoplesolutions.com/' target="_blank">Click HERE! to go to the Insights Diagnostic Tool to have a look for yourself.</a><br /><br />
+
+        When <b>Zeta People Solutions</b>, the parent company of TEMPRO, approached me with the challenge of transforming their intricate internal tool into an accessible online solution, I eagerly took on the task.<br /><br />
 
         The <b>original tool</b>, a sophisticated and <b>detailed interactive Excel document</b>, posed significant complexity.<br /><br />
 
@@ -98,15 +106,16 @@ export const contentForCarousel = {
 
         <b>Upon completion</b> of the tool, the application <b>automatically generates</b> a <b>comprehensive report</b>, detailing Zeta People Solutions' <b>product recommendations</b>, and triggers <b>email notifications</b> to both the CEO and Zeta People Solutions.<br /><br />  
 
-        This seamless integration of data management, user guidance, and reporting capabilities exemplifies my commitment to delivering impactful solutions tailored to my clients' needs.<br /><br /> 
-        
-        Click <a href='https://zetapeoplesolutions.com/' target="_blank">HERE!</a> to go to the Insights Diagnostic Tool to have a look for yourself.
+        This seamless integration of data management, user guidance, and reporting capabilities exemplifies my commitment to delivering impactful solutions tailored to my clients' needs.
         `,
         "skillIcons": ["react", "typescript", "javascript", "material-ui", "firebase", "sass", "node-js"]
     },
     "Income Tax Calculator Python": {
         "descriptionHeader": "Income Tax Calculator Python",
-        "descriptionText": `Designed to <b>streamline tax calculations</b> for both individuals and businesses, this Python-based calculator simplifies the often daunting task of computing taxes.<br /><br />
+        "descriptionText": `
+        <a href='https://github.com/trafficcone15/tax-calculator' target="_blank">Click HERE! to take a look at the code in my github.</a><br /><br />
+
+        Designed to <b>streamline tax calculations</b> for both individuals and businesses, this Python-based calculator simplifies the often daunting task of computing taxes.<br /><br />
 
         Unlike its more comprehensive counterpart I developed for Android using Xamarin, which utilizes exhaustive lists of tax calculations provided by the New Zealand Inland Revenue Department (IRD), this calculator offers a <b>straightforward approach</b> to <b>tax assessment</b>.<br /><br />
 
@@ -116,14 +125,16 @@ export const contentForCarousel = {
 
         Whether you're an individual managing personal finances or a business owner navigating complex tax scenarios, this calculator offers a reliable tool for making informed financial decisions.<br /><br />
 
-        Its intuitive interface and efficient functionality make tax calculation a breeze, empowering users to stay on top of their tax obligations with ease.<br /><br />
-        
-        Click <a href='https://github.com/trafficcone15/tax-calculator' target="_blank">HERE!</a> to take a look at the code in my github.`,
+        Its intuitive interface and efficient functionality make tax calculation a breeze, empowering users to stay on top of their tax obligations with ease.
+      `,
         "skillIcons": ["python"]
     },
     "Electricity Bill Calculator Python": {
         "descriptionHeader": "Electricity Bill Calculator Python",
-        "descriptionText": `During my time with an energy provider, I encountered a perplexing issue: <b>inconsistent due dates</b> and <b>invoice delivery</b>.<br /><br />
+        "descriptionText": `     
+        <a href='https://github.com/trafficcone15/calculate-electric-bill-due-date' target="_blank">Click HERE! to take a look at the code in my github.</a><br /><br />
+
+        During my time with an energy provider, I encountered a perplexing issue: <b>inconsistent due dates</b> and <b>invoice delivery</b>.<br /><br />
 
         The process seemed to factor in public holidays and business days in an irregular manner, leading to confusion and frustration.<br /><br />
 
@@ -132,8 +143,6 @@ export const contentForCarousel = {
         This app offers a straightforward solution to a complex problem.<br /><br />
 
         By leveraging data on billing cycles, public holidays, and business days, it calculates precise invoicing and due dates with ease.<br /><br />
-        
-        Click <a href='https://github.com/trafficcone15/calculate-electric-bill-due-date' target="_blank">HERE!</a> to take a look at the code in my github.
         `,
         "skillIcons": ["python"]
     }
@@ -161,7 +170,7 @@ export const contentForExperience = [
         details: "Advanced my expertise in Web Development and Design, gaining practical knowledge in modern web technologies and design principles."
     },
     {
-        experience: "SmartTrade",
+        experience: "SmartTrade Job Management Software",
         duration: "2018 - present",
         details: "Front-end software developer leading the forms and reporting departments, transforming traditional paper-based processes into digital solutions, streamlining workflows for tradesmen and improving operational efficiency."
     },

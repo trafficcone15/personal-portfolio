@@ -3,8 +3,7 @@ import React, { useEffect } from 'react';
 import * as d3 from 'd3';
 import { setupNodes, moveNodes, handleCollisions, generateLines } from '../utils/particleBoardUtilities';
 
-const ParticleBoardCanvas: React.FC<ParticleBoardCanvas> = ({ particles, showLines, particleBoardWidth, particleBoardHeight, svgRef }) => {
-
+const ParticleBoardCanvas: React.FC<ParticleBoardCanvas> = ({ particles, showLines, particleBoardWidth, particleBoardHeight, svgRef, setIsCanvasLoaded }) => {
     useEffect(() => {
         const svg = d3.select(svgRef.current);
         svg.selectAll('*').remove(); // Clear previous SVG elements
@@ -23,10 +22,10 @@ const ParticleBoardCanvas: React.FC<ParticleBoardCanvas> = ({ particles, showLin
             }
 
             requestAnimationFrame(updateNodePositions); // Continue the animation loop
-        };
-
+        };        
         requestAnimationFrame(updateNodePositions); // Continue the animation loop
-
+        
+        setIsCanvasLoaded(true);
     }, [particles, particleBoardWidth, particleBoardHeight, showLines]);
 
     return (

@@ -6,6 +6,7 @@ const useParticleBoard = (apiUrl: string, svgRef: React.RefObject<SVGSVGElement>
     const originalParticlesRef = useRef<Particle[]>([]);
     const [particleBoardWidth, setParticleBoardWidth] = useState<number>(0);
     const [particleBoardHeight, setParticleBoardHeight] = useState<number>(0);
+    const [haveParticlesBeenFetched, setHaveParticlesBeenFetched] =  useState<boolean>(false);
     const [userId, setUserId] = useState<string | null>(null);
 
     const debounce = <F extends (...args: any[]) => void>(
@@ -57,8 +58,10 @@ const useParticleBoard = (apiUrl: string, svgRef: React.RefObject<SVGSVGElement>
                 if (fetchedParticles)
                     setParticles(fetchedParticles);
                 originalParticlesRef.current = fetchedParticles;
+                setHaveParticlesBeenFetched(true);
             } catch (error) {
                 console.error('Error fetching particles:', error);
+                setHaveParticlesBeenFetched(false);
             }
         };
 
@@ -76,7 +79,8 @@ const useParticleBoard = (apiUrl: string, svgRef: React.RefObject<SVGSVGElement>
         particleBoardHeight,
         setParticleBoardHeight,
         userId,
-        setUserId
+        setUserId,
+        haveParticlesBeenFetched
     };
 };
 

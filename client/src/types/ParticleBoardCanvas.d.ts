@@ -4,4 +4,5 @@ type ParticleBoardCanvas = {
     particleBoardWidth: number;
     particleBoardHeight: number;
     svgRef: Ref;
-};
+    setIsCanvasLoaded: (boolean) => void;
+}

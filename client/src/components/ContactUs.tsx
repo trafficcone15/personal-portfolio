@@ -10,7 +10,8 @@ const ContactUs = () => {
     const [formState, setFormState] = useState<FormState>({ name: '', email: '', message: '' });
     const [openDialog, setOpenDialog] = useState(false);
     const [errors, setErrors] = useState({ name: '', email: '', message: '' });
-    const [dialogContent, setDialogContent] = useState('');
+    const [dialogContent, setDialogContent] = useState('');    
+    const apiUrl = import.meta.env.VITE_API_URL;
 
     const hiddenElementsRef = useRef<NodeListOf<HTMLElement> | null>(null);
 
@@ -67,8 +68,8 @@ const ContactUs = () => {
         setIsLoading(true);
 
         try {
-            await axios.post(`http://localhost:8082/api/contact/send-email`, formState);
-            await axios.post(`http://localhost:8082/api/contact/upload-contact`, formState);
+            await axios.post(`${apiUrl}/api/contact/send-email`, formState);
+            await axios.post(`${apiUrl}/api/contact/upload-contact`, formState);
             setDialogContent('Message sent successfully!');
         } catch (error) {
             setDialogContent('Failed to send message. Please try again.');
