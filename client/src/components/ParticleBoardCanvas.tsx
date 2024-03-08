@@ -6,14 +6,17 @@ import { setupNodes, moveNodes, handleCollisions, generateLines } from '../utils
 const ParticleBoardCanvas: React.FC<ParticleBoardCanvas> = ({ particles, showLines, particleBoardWidth, particleBoardHeight, svgContainerRef, onParticlesRendered }) => {
     
     useEffect(() => {
+        if (particles.length === 0) {
+            return; // Don't proceed if particles are not loaded
+        }
+
         const svg = d3.select(svgContainerRef.current).select('svg');
         svg.selectAll('*').remove(); // Clear previous SVG elements
         let nodes = setupNodes(svg, particles);
-        let firstRender = true;
+        let hasRenderedParticles = false;
 
         const updateNodePositions = () => {
-            if (!nodes)
-                return
+            if (!nodes) return;
 
             moveNodes(nodes, particleBoardWidth, particleBoardHeight);
             handleCollisions(particles);
@@ -23,16 +26,16 @@ const ParticleBoardCanvas: React.FC<ParticleBoardCanvas> = ({ particles, showLin
                 svg.selectAll('.line').remove();
             }
 
-            if (firstRender) {
+            if (!hasRenderedParticles) {
                 onParticlesRendered(true);
-                firstRender = false;
+                hasRenderedParticles = true;
             }
 
             requestAnimationFrame(updateNodePositions); // Continue the animation loop
         };
 
-        requestAnimationFrame(updateNodePositions); // Continue the animation loop
-    }, [particles, particleBoardWidth, particleBoardHeight, showLines]);
+        requestAnimationFrame(updateNodePositions); // Start the animation loop
+    }, [particles, particleBoardWidth, particleBoardHeight, showLines, onParticlesRendered]);
 
     return (
         <svg

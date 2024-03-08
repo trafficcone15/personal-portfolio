@@ -58,7 +58,7 @@ const ParticleBoardSection = () => {
                     </div>
                 )}
             </div>
-            {isCanvasLoaded ?? (
+            {isCanvasLoaded && (
                 <ParticleBoardForm
                     onHideLines={(isChecked) => { isChecked ? setShowLines(false) : setShowLines(true) }}
                     setParticles={setParticles}
