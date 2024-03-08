@@ -5,20 +5,21 @@
     display: flex;
     align-items: center;
     flex-direction: column;
+    padding-left: 5%;
+    padding-right: 5%;
 
     h1,
     h2 {
         font-family: "Mulish", sans-serif;
         text-align: center;
         padding-top: 50px;
-
-        padding-bottom: 50px;
     }
 
     h1 {
         font-size: 2rem;
         transform: translateY(-50px) scale(0);
-        transition: transform .7s ease;
+        transition: transform .7s ease;        
+        padding-bottom: 50px;
     }
 
     h2 {
@@ -81,7 +82,8 @@
         }
     }
 
-    .particle-board-wrapper {
+    .particle-board-wrapper { 
+        height: 200px;     
         width: 100%;
         max-width: 1500px;
         display: flex;
@@ -89,32 +91,32 @@
         align-items: center;
         text-align: center;
         margin-top: 1%;
-        margin-bottom: 1%;        
-        position: relative;
+        margin-bottom: 1%; 
+        padding: 0;         
 
         .svg-particle-board {
+            height: 200px;
             width: 100%;
+            max-width: 1500px;
             display: flex;
             justify-content: center;
             align-items: center;
-            max-width: 1500px;
-            height: 200px;
             border: 1px solid black;
         }        
+    }    
 
-        .loading-container {
-            position: absolute;
-            top: 35%;
-            transform: translateY(-35%);
-            left: 50%;
-            transform: translatex(-50%);
-            height: 100%;
-            text-align: center;
-        }
-    
-        .loading-container p {
-            font-size: 1.2em;
-        }
+    .loading-container {
+        position: absolute;
+        top: 16%;
+        transform: translateY(-16%);
+        left: 50%;
+        transform: translatex(-50%);
+        height: 100%;
+        text-align: center;
+    }
+
+    .loading-container p {
+        font-size: 1.2em;
     }
 
     .welcome-section {
@@ -138,8 +140,8 @@
         }
 
         .particle-board-wrapper {
-            padding-left: 10%;
-            padding-right: 10%;
+            margin-left: 10%;
+            margin-right: 10%;
         }
 
         .welcome-section {
@@ -159,8 +161,8 @@
         }
 
         .particle-board-wrapper {
-            padding-left: 5%;
-            padding-right: 5%;
+            margin-left: 5%;
+            margin-right: 5%;
         }
 
         .welcome-section {

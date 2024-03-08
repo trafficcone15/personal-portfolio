@@ -32,8 +32,6 @@ const useParticleBoard = (apiUrl: string, svgContainerRef: React.RefObject<HTMLD
         // Debounce function to help prevent performance issues when testing responsivess and consistently resizing browser 
         const handleResize = debounce(setBoardSize, 250);
 
-
-        debugger;
         // Set initial size
         setBoardSize();
 

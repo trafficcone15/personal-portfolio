@@ -22,17 +22,15 @@ const ExperiencesSection = () => {
 
         if (!hiddenElementsRef.current) return;
 
+        // Adjust here to make the experiences boxes appear sooner or later as you scroll down.
+        // A smaller value means the animation will start when the element is closer to the viewport's bottom edge.
+        const startAnimationOffset = 150; // You can adjust this value as needed
+
         hiddenElementsRef.current.forEach((element) => {
             const rect = element.getBoundingClientRect();
+            const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
 
-            const isVisible = (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            );
-
-            if (isVisible) {
+            if (rect.top < viewportHeight - startAnimationOffset) {
                 const experienceSections = element.getElementsByClassName('hidden');
                 Array.from(experienceSections).forEach((section: Element) => {
                     (section as HTMLElement).style.transition = 'opacity 1.2s, margin-left 1.2s';

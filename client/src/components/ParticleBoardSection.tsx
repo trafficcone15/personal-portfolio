@@ -40,9 +40,9 @@ const ParticleBoardSection = () => {
     };
 
     return (
-        <div className="particle-board-section-container section-container" id="mern-board">
+        <div className="particle-board-section-container section-container" id="welcome-board">
             <h1>Particle Welcome Board</h1>
-            <div className='particle-board-wrapper section-container' ref={svgContainerRef}>
+            <div className='particle-board-wrapper' ref={svgContainerRef}>
                 <ParticleBoardCanvas
                     particles={particles}
                     showLines={showLines}
@@ -51,13 +51,13 @@ const ParticleBoardSection = () => {
                     svgContainerRef={svgContainerRef}
                     onParticlesRendered={(hasBeenRendered) => setIsCanvasLoaded(hasBeenRendered)}
                 />
-                {!isCanvasLoaded && (
-                    <div className="loading-container">
-                        <CircularProgress />
-                        <p>Loading Board...</p>
-                    </div>
-                )}
             </div>
+            {!isCanvasLoaded && (
+                <div className="loading-container">
+                    <CircularProgress />
+                    <p>Loading Board...</p>
+                </div>
+            )}
             {isCanvasLoaded && (
                 <ParticleBoardForm
                     onHideLines={(isChecked) => { isChecked ? setShowLines(false) : setShowLines(true) }}

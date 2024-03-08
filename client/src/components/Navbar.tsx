@@ -69,7 +69,7 @@ const Navbar: React.FC = () => {
                         <a onClick={() => handleNavClick('projects')}>Projects</a>
                     </li>
                     <li>
-                        <a onClick={() => handleNavClick('mern-board')}>MERN board</a>
+                        <a onClick={() => handleNavClick('welcome-board')}>Welcome board</a>
                     </li>
                     <li>
                         <a onClick={() => handleNavClick('contact-me')}>Contact me</a>

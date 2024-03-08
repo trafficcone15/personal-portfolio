@@ -2,7 +2,7 @@ export const contentForCarousel = {
     "Kj to Calorie Converter": {
         "descriptionHeader": "Kj to Calorie Converter",
         "descriptionText": `
-        <a href='https://github.com/trafficcone15/KJToCalorieConverter' target="_blank">Click HERE! to take a look at the code in my github.</a><br /><br />
+        <a href='https://github.com/trafficcone15/KJToCalorieConverter' target="_blank">Click here to take a look at the code in my GitHub.</a><br /><br />
         
         In <b>New Zealand</b>, most food items are labeled with their <b>energy value in kilojoules (Kj)</b>.<br /><br />
 
@@ -18,7 +18,7 @@ export const contentForCarousel = {
     "Income Related Rent App": {
         "descriptionHeader": "Income Related Rent App",
         "descriptionText": `
-        <a href='https://github.com/trafficcone15/income-rent-and-tax-calculator' target="_blank">Click HERE! to take a look at the code in my github.</a><br /><br />
+        <a href='https://github.com/trafficcone15/income-rent-and-tax-calculator' target="_blank">Click here to take a look at the code in my GitHub.</a><br /><br />
         
         Income Related Rent App is a sophisticated mobile application designed to simplify and streamline the financial planning associated with <b>rental payments</b> in <b>New Zealand</b>.<br /><br />
         
@@ -64,7 +64,7 @@ export const contentForCarousel = {
     "TEMPRO Website": {
         "descriptionHeader": "TEMPRO Website",
         "descriptionText": `
-        <a href='https://temprodiversitysolutions.au/' target="_blank">Click HERE! to go to the TEMPRO Website to have a look for yourself.</a><br /><br />
+        <a href='https://temprodiversitysolutions.au/' target="_blank">Click here to go to the TEMPRO Website to have a look for yourself.</a><br /><br />
         
         The <b>TEMPRO</b> organization goes beyond traditional recruiting services, offering an array of training programs tailored for companies, <b>CEOs</b>, and <b>job seekers</b> alike.<br /><br />
 
@@ -88,7 +88,7 @@ export const contentForCarousel = {
     "Insights Tool": {
         "descriptionHeader": "Insights Tool",
         "descriptionText": `
-        <a href='https://zetapeoplesolutions.com/' target="_blank">Click HERE! to go to the Insights Diagnostic Tool to have a look for yourself.</a><br /><br />
+        <a href='https://zetapeoplesolutions.com/' target="_blank">Click here to go to the Insights Diagnostic Tool to have a look for yourself.</a><br /><br />
 
         When <b>Zeta People Solutions</b>, the parent company of TEMPRO, approached me with the challenge of transforming their intricate internal tool into an accessible online solution, I eagerly took on the task.<br /><br />
 
@@ -113,7 +113,7 @@ export const contentForCarousel = {
     "Income Tax Calculator Python": {
         "descriptionHeader": "Income Tax Calculator Python",
         "descriptionText": `
-        <a href='https://github.com/trafficcone15/tax-calculator' target="_blank">Click HERE! to take a look at the code in my github.</a><br /><br />
+        <a href='https://github.com/trafficcone15/tax-calculator' target="_blank">Click here to take a look at the code in my GitHub.</a><br /><br />
 
         Designed to <b>streamline tax calculations</b> for both individuals and businesses, this Python-based calculator simplifies the often daunting task of computing taxes.<br /><br />
 
@@ -132,7 +132,7 @@ export const contentForCarousel = {
     "Electricity Bill Calculator Python": {
         "descriptionHeader": "Electricity Bill Calculator Python",
         "descriptionText": `     
-        <a href='https://github.com/trafficcone15/calculate-electric-bill-due-date' target="_blank">Click HERE! to take a look at the code in my github.</a><br /><br />
+        <a href='https://github.com/trafficcone15/calculate-electric-bill-due-date' target="_blank">Click here to take a look at the code in my GitHub.</a><br /><br />
 
         During my time with an energy provider, I encountered a perplexing issue: <b>inconsistent due dates</b> and <b>invoice delivery</b>.<br /><br />
 
