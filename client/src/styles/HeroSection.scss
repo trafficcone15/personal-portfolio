@@ -1,3 +1,5 @@
+@import "./General.scss";
+
 .hero-section-container {
     position: relative;
     font-family: "Source Code Pro", monospace;
@@ -63,6 +65,18 @@
             .coding-lottie-animation {
                 width: 50%;
             }
+        }
+    }
+
+    @media screen and (max-width: 530px) {
+        .source-link {
+            font-size: $animatedTextFontSizeSubTextSmallDevices;
+        }
+    }
+
+    @media screen and (max-height: 720px) {
+        .source-link {
+            font-size: $animatedTextFontSizeSubTextSmallDevices;
         }
     }
 }

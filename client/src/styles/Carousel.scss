@@ -1,8 +1,12 @@
+@import "./General.scss";
+
 .carousel-container {
     min-height: 1460px;
     width: 100%;
     background: #bde1ec;
     position: relative;
+    padding-left: $mainSectionsConsistentSidePaddingOrMargin;
+    padding-right: $mainSectionsConsistentSidePaddingOrMargin;
 
     h1,
     h2 {
@@ -29,8 +33,8 @@
 
     .carousel-description {
         margin-top: 10px;
-        margin-left: 30%;
-        margin-right: 30%;
+        margin-left: $childSectionsConsistentSidePaddingOrMarginLargeDevices;
+        margin-right: $childSectionsConsistentSidePaddingOrMarginLargeDevices;
 
         a {
             color: #6c0080;
@@ -171,8 +175,8 @@
 
     @media screen and (max-width: 1800px) {
         .carousel-description {
-            margin-left: 10%;
-            margin-right: 10%;
+            margin-left: $childSectionsConsistentSidePaddingOrMarginMediumDevices;
+            margin-right: $childSectionsConsistentSidePaddingOrMarginMediumDevices;
         }
     }
 
@@ -228,8 +232,8 @@
 
     @media screen and (max-width: 880px) {
         .carousel-description {
-            margin-left: 5%;
-            margin-right: 5%;
+            margin-left: $childSectionsConsistentSidePaddingOrMarginSmallDevices;
+            margin-right: $childSectionsConsistentSidePaddingOrMarginSmallDevices;
         }
 
         .carousel {
@@ -289,12 +293,7 @@
     }
 
     @media screen and (max-width: 600px) {
-        height: 1590px;
-
-        .carousel-description {
-            margin-left: 5%;
-            margin-right: 5%;
-        }
+        height: 1750px;
 
         .carousel {
             height: 180px;

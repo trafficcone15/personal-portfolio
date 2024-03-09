@@ -1,3 +1,5 @@
+@import "./General.scss";
+
 .animated-text-container {
     @mixin nth-animation-delay($delay_items: 7, $delay_time: 0.8s) {
         @for $i from 1 through $delay_items {
@@ -75,11 +77,21 @@
 
     @media screen and (max-width: 530px) {
         .heading {
-            font-size: 1rem;
+            font-size: $animatedTextFontSizeHeadingSmallDevices;
         }
 
-        .sub-text {
-            font-size: 0.9rem;
+        .sub-text, .source-link {
+            font-size: $animatedTextFontSizeSubTextSmallDevices;
+        }
+    }
+
+    @media screen and (max-height: 720px) {
+        .heading {
+            font-size: $animatedTextFontSizeHeadingSmallDevices;
+        }
+
+        .sub-text, .source-link {
+            font-size: $animatedTextFontSizeSubTextSmallDevices;
         }
     }
 }

@@ -1,3 +1,5 @@
+@import "./General.scss";
+
 .about-me-container {
     display: flex;
     justify-content: space-between;
@@ -7,8 +9,8 @@
     padding-top: 6%;
     padding-bottom: 6%;
     background-color: #c8bdec;
-    padding-left: 15%;
-    padding-right: 15%;
+    padding-left: $mainSectionsConsistentSidePaddingOrMargin;
+    padding-right: $mainSectionsConsistentSidePaddingOrMargin;
 
     h1, h2 {
         padding-bottom: 50px;
@@ -77,8 +79,10 @@
     }
 
     @media screen and (max-width: 880px) {
-        padding-left: 5%;
-        padding-right: 5%;
+        p, h1 {
+        padding-left: $childSectionsConsistentSidePaddingOrMarginSmallDevices;
+        padding-right: $childSectionsConsistentSidePaddingOrMarginSmallDevices;
+        }
     }
 
     @media screen and (max-width: 530px) {

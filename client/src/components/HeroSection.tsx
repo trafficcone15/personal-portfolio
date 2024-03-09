@@ -13,15 +13,25 @@ const HeroSection = () => {
         return () => clearTimeout(timer);
     }, []);
 
-    const animatedTextSubText = `I am a software developer.<br />
-I designed and crafted this site using the MERN stack,<br />
-utilizing MongoDB, Express.js, React (with TypeScript), and Node.js.<br />
-Featured here is a unique mini project - a Digital Welcome Board.<br />
-It's a creative application of the MERN stack and RESTful API,<br />
-where visitors can leave their mark in real-time.<br />
-Explore below to see more of my skills and projects.<br /><br />
+    const animatedTextSubText = `
+I'm a passionate software developer.<br />
+This site represents a dynamic full stack web application, complete with its own dedicated server.<br /><br />
 
-Feel free to take a look at the code for this site on my GitHub.
+Crafted meticulously from scratch, this application harnesses the power of the MERN stack,<br />
+integrating MongoDB, Express.js, React (augmented with TypeScript), and Node.js.<br /><br />
+
+A highlight of this site is the innovative Digital Welcome Board.<br />
+It exemplifies a creative blend of the MERN stack with a RESTful API,<br />
+offering real-time interactivity for visitors to leave a personal touch.<br /><br />
+
+Proudly, this site stands as a testament to cost-effective engineering -<br /> 
+built and operational without burdensome fees or subscriptions.<br />
+The sole expense? The domain name.<br /><br />
+
+Dive below to uncover a showcase of my technical abilities and inventive projects.<br />
+Each project is a unique brainchild, crafted from the ground up and free to operate.<br /><br />
+
+Curious about the inner workings? Take a peek at the source code on my GitHub.
 `;
 
     return (
