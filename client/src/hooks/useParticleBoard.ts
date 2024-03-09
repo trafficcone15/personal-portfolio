@@ -7,6 +7,9 @@ const useParticleBoard = (apiUrl: string, svgContainerRef: React.RefObject<HTMLD
     const [particleBoardWidth, setParticleBoardWidth] = useState<number>(0);
     const [particleBoardHeight, setParticleBoardHeight] = useState<number>(0);
     const [userId, setUserId] = useState<string | null>(null);
+    // Adjust particleSpeedFactor to control particle speed (1 = normal, >1 = faster, <1 = slower)
+    const particleSpeedFactor = 2;
+
 
     const debounce = <F extends (...args: any[]) => void>(
         func: F,
@@ -50,8 +53,8 @@ const useParticleBoard = (apiUrl: string, svgContainerRef: React.RefObject<HTMLD
                     ...particle,
                     x: Math.random() * particleBoardWidth,
                     y: Math.random() * particleBoardHeight,
-                    vx: (Math.random() - 0.5) * 2,
-                    vy: (Math.random() - 0.5) * 2,
+                    vx: (Math.random() - 0.5) * 2 * particleSpeedFactor,
+                    vy: (Math.random() - 0.5) * 2 * particleSpeedFactor,
                     color: `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 1)`
                 }));
                 if (fetchedParticles)
@@ -66,7 +69,7 @@ const useParticleBoard = (apiUrl: string, svgContainerRef: React.RefObject<HTMLD
             fetchParticles();
         }
     }, [apiUrl, particleBoardWidth, particleBoardHeight]);
-    
+
     return {
         particles,
         setParticles,
@@ -74,6 +77,7 @@ const useParticleBoard = (apiUrl: string, svgContainerRef: React.RefObject<HTMLD
         particleBoardWidth,
         setParticleBoardWidth,
         particleBoardHeight,
+        particleSpeedFactor,
         setParticleBoardHeight,
         userId,
         setUserId

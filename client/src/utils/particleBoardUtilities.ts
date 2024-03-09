@@ -1,5 +1,16 @@
 import * as d3 from 'd3';
 
+const particleRadius = 5;
+
+const clampVelocity = (velocity: number, speedFactor: number) => {
+  const minVelocity = speedFactor * 0.1; // Minimum is half of speed factor
+  const maxVelocity = speedFactor * 0.5;   // Maximum is twice the speed factor
+  const absVelocity = Math.abs(velocity);
+  const clampedVelocity = Math.max(minVelocity, Math.min(maxVelocity, absVelocity));
+  return velocity >= 0 ? clampedVelocity : -clampedVelocity;
+};
+
+
 export const setupNodes = (svg: d3.Selection<any, unknown, null, undefined>, particles: Particle[]) => {
   const nodes = svg.selectAll('.node')
     .data(particles)
@@ -8,7 +19,7 @@ export const setupNodes = (svg: d3.Selection<any, unknown, null, undefined>, par
     .attr('transform', (d: any) => `translate(${d.x}, ${d.y})`);
 
   nodes.append('circle')
-    .attr('r', 5) // Radius of particles
+    .attr('r', particleRadius) // Radius of particles
     .attr('fill', () => `rgb(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255})`);
 
   nodes.append('text')
@@ -21,23 +32,32 @@ export const setupNodes = (svg: d3.Selection<any, unknown, null, undefined>, par
   return nodes;
 };
 
-export const moveNodes = (nodes: d3.Selection<SVGGElement, Particle, any, unknown>, particleBoardWidth: number, particleBoardHeight: number) => {
-  nodes.each(function (this: SVGElement, d: Particle) {
-    const transformAttr = this.getAttribute('transform');
-    if (transformAttr) {
-      const [x, y] = transformAttr.substring(10, transformAttr.length - 1).split(',').map(Number);
-      d.x = x + d.vx;
-      d.y = y + d.vy;
+export const moveNodes = (nodes: d3.Selection<SVGGElement, Particle, any, unknown>, particleBoardWidth: number, particleBoardHeight: number, speedFactor: number) => {
+  nodes.each(function (d) {
+    // Clamp velocities
+    d.vx = clampVelocity(d.vx, speedFactor);
+    d.vy = clampVelocity(d.vy, speedFactor);
 
-      // Adjust position and reverse velocity if node hits boundaries
-      if (d.x <= 0 || d.x >= particleBoardWidth) d.vx *= -1;
-      if (d.y <= 0 || d.y >= particleBoardHeight) d.vy *= -1;
+    // Update position based on velocity
+    d.x += d.vx;
+    d.y += d.vy;
 
-      // Update node position
-      d3.select(this).attr('transform', `translate(${d.x}, ${d.y})`);
+    // Collision detection with boundaries
+    if (d.x - particleRadius <= 0 || d.x + particleRadius >= particleBoardWidth) {
+      d.vx *= -1; // Reverse horizontal velocity
+      d.x = Math.max(particleRadius, Math.min(particleBoardWidth - particleRadius, d.x)); // Adjust position
     }
+    if (d.y - particleRadius <= 0 || d.y + particleRadius >= particleBoardHeight) {
+      d.vy *= -1; // Reverse vertical velocity
+      d.y = Math.max(particleRadius, Math.min(particleBoardHeight - particleRadius, d.y)); // Adjust position
+    }
+
+    // Update node position
+    d3.select(this).attr('transform', `translate(${d.x}, ${d.y})`);
   });
-}
+};
+
+
 
 export const handleCollisions = (particles: Particle[]) => {
   const nodes = particles;
@@ -46,7 +66,7 @@ export const handleCollisions = (particles: Particle[]) => {
       const dx = nodes[j].x - nodes[i].x;
       const dy = nodes[j].y - nodes[i].y;
       const distance = Math.sqrt(dx * dx + dy * dy);
-      const minDistance = 5; // Particle radius
+      const minDistance = particleRadius;
 
       if (distance < minDistance) {
         const angle = Math.atan2(dy, dx);

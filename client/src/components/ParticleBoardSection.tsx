@@ -11,7 +11,7 @@ const ParticleBoardSection = () => {
     const [showLines, setShowLines] = useState<boolean>(true);
     const apiUrl = import.meta.env.VITE_API_URL;
     const [isCanvasLoaded, setIsCanvasLoaded] = useState<boolean>(false);
-    const { particles, setParticles, originalParticlesRef, particleBoardWidth, particleBoardHeight } = useParticleBoard(`${apiUrl}/api/particles`, svgContainerRef);
+    const { particles, setParticles, originalParticlesRef, particleBoardWidth, particleBoardHeight, particleSpeedFactor } = useParticleBoard(`${apiUrl}/api/particles`, svgContainerRef);
 
     const hiddenElementsRef = useRef<NodeListOf<HTMLElement> | null>(null);
 
@@ -50,6 +50,7 @@ const ParticleBoardSection = () => {
                     particleBoardHeight={particleBoardHeight}
                     svgContainerRef={svgContainerRef}
                     onParticlesRendered={(hasBeenRendered) => setIsCanvasLoaded(hasBeenRendered)}
+                    particleSpeedFactor={particleSpeedFactor}
                 />
             </div>
             {!isCanvasLoaded && (

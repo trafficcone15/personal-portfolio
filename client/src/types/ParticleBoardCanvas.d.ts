@@ -4,5 +4,6 @@ type ParticleBoardCanvas = {
     particleBoardWidth: number;
     particleBoardHeight: number;
     svgContainerRef: Ref;
+    particleSpeedFactor: number;
     onParticlesRendered: (hasBeenRendered: boolean) => void;
 }

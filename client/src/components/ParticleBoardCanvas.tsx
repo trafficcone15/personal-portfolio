@@ -3,7 +3,7 @@ import React, { useEffect } from 'react';
 import * as d3 from 'd3';
 import { setupNodes, moveNodes, handleCollisions, generateLines } from '../utils/particleBoardUtilities';
 
-const ParticleBoardCanvas: React.FC<ParticleBoardCanvas> = ({ particles, showLines, particleBoardWidth, particleBoardHeight, svgContainerRef, onParticlesRendered }) => {
+const ParticleBoardCanvas: React.FC<ParticleBoardCanvas> = ({ particles, showLines, particleBoardWidth, particleBoardHeight, svgContainerRef, onParticlesRendered, particleSpeedFactor }) => {
     
     useEffect(() => {
         if (particles.length === 0) {
@@ -14,11 +14,11 @@ const ParticleBoardCanvas: React.FC<ParticleBoardCanvas> = ({ particles, showLin
         svg.selectAll('*').remove(); // Clear previous SVG elements
         let nodes = setupNodes(svg, particles);
         let hasRenderedParticles = false;
-
+        debugger;
         const updateNodePositions = () => {
             if (!nodes) return;
 
-            moveNodes(nodes, particleBoardWidth, particleBoardHeight);
+            moveNodes(nodes, particleBoardWidth, particleBoardHeight, particleSpeedFactor);
             handleCollisions(particles);
             if (showLines) {
                 generateLines(particles, svg);
