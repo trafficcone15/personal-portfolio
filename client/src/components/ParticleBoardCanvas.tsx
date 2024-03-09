@@ -14,7 +14,7 @@ const ParticleBoardCanvas: React.FC<ParticleBoardCanvas> = ({ particles, showLin
         svg.selectAll('*').remove(); // Clear previous SVG elements
         let nodes = setupNodes(svg, particles);
         let hasRenderedParticles = false;
-        debugger;
+        
         const updateNodePositions = () => {
             if (!nodes) return;
 
