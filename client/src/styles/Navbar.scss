@@ -30,11 +30,9 @@
         --cor2: #FFFFFF;
         --cor3: #7c8db8;
         --cor4: #4f7df0;
-
-        height: 50px;
         background: rgba(128, 103, 208, 1);
         border-radius: 20px 20px 0px 0px;
-        padding: 30px;
+        padding: 15px;
         position: fixed;
         bottom: 0;
         width: 100%;
@@ -232,6 +230,10 @@
     }
 
     @media screen and (max-width: 800px) {
+        .navbar {
+            padding: 5px;
+        }
+
         #hamburger {
             display: grid;
             transform: scale(0.3);
