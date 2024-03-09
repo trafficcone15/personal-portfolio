@@ -37,9 +37,7 @@ const ParticleBoardForm = ({ onHideLines, setParticles, particles, originalParti
 
     const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-
-        debugger;
-
+        
         if (!validateForm()) {
             return;
         }
