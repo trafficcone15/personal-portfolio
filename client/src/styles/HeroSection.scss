@@ -39,11 +39,11 @@
         }
 
         .welcome-text {
-            width: 100%;
+            width: 80%;
         }
 
         .coding-lottie-animation {
-            width: 40%;
+            width: 50%;
             max-width: 800px;
             display: flex;
             justify-content: center;
@@ -68,7 +68,7 @@
         }
     }
 
-    @media screen and (max-width: 712px) {
+    @media screen and (max-width: 800px) {
         .source-link {
             font-size: $animatedTextFontSizeSubTextSmallDevices;
         }

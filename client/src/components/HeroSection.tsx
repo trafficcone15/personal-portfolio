@@ -17,19 +17,11 @@ const HeroSection = () => {
 I'm a passionate software developer.<br />
 This site represents a dynamic full stack web application, complete with its own dedicated server.<br /><br />
 
-Crafted meticulously from scratch, this application harnesses the power of the MERN stack,<br />
-integrating MongoDB, Express.js, React (augmented with TypeScript), and Node.js.<br /><br />
+Crafted meticulously from scratch, this application harnesses the power of the MERN stack, integrating MongoDB, Express.js, React (augmented with TypeScript), and Node.js.<br /><br />
 
-A highlight of this site is the innovative Digital Welcome Board.<br />
-It exemplifies a creative blend of the MERN stack with a RESTful API,<br />
-offering real-time interactivity for visitors to leave a personal touch.<br /><br />
+Built and operating without burdensome fees or subscriptions. The sole expense? The domain name.<br /><br />
 
-Proudly, this site stands as a testament to cost-effective engineering -<br /> 
-built and operational without burdensome fees or subscriptions.<br />
-The sole expense? The domain name.<br /><br />
-
-Dive below to uncover a showcase of my technical abilities and inventive projects.<br />
-Each project is a unique brainchild, crafted from the ground up and free to operate.<br /><br />
+Dive below to uncover a showcase of my technical abilities and inventive projects. Each project is a unique brainchild, crafted from the ground up and free to operate.<br /><br />
 
 Curious about the inner workings? Take a peek at the source code on my GitHub.
 `;
