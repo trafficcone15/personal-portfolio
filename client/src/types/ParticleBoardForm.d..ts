@@ -5,4 +5,5 @@ type ParticleBoardForm = {
     originalParticlesRef: any;
     particleBoardWidth: number;
     particleBoardHeight: number;
+    particleSpeedFactor: number;
 };

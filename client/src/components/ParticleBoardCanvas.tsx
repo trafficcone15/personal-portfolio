@@ -1,10 +1,10 @@
-import React, { useEffect } from 'react';
-
+import React, { useEffect, useRef } from 'react';
 import * as d3 from 'd3';
 import { setupNodes, moveNodes, handleCollisions, generateLines } from '../utils/particleBoardUtilities';
 
 const ParticleBoardCanvas: React.FC<ParticleBoardCanvas> = ({ particles, showLines, particleBoardWidth, particleBoardHeight, svgContainerRef, onParticlesRendered, particleSpeedFactor }) => {
-    
+    const animationRef = useRef<number>(0);
+
     useEffect(() => {
         if (particles.length === 0) {
             return; // Don't proceed if particles are not loaded
@@ -14,7 +14,7 @@ const ParticleBoardCanvas: React.FC<ParticleBoardCanvas> = ({ particles, showLin
         svg.selectAll('*').remove(); // Clear previous SVG elements
         let nodes = setupNodes(svg, particles);
         let hasRenderedParticles = false;
-        
+
         const updateNodePositions = () => {
             if (!nodes) return;
 
@@ -31,10 +31,15 @@ const ParticleBoardCanvas: React.FC<ParticleBoardCanvas> = ({ particles, showLin
                 hasRenderedParticles = true;
             }
 
-            requestAnimationFrame(updateNodePositions); // Continue the animation loop
+            animationRef.current = requestAnimationFrame(updateNodePositions); // Continue the animation loop
         };
+        // Start the animation loop
+        animationRef.current = requestAnimationFrame(updateNodePositions);
 
-        requestAnimationFrame(updateNodePositions); // Start the animation loop
+        // Clean up function to cancel the animation frame when unmounting
+        return () => {
+            cancelAnimationFrame(animationRef.current);
+        };
     }, [particles, particleBoardWidth, particleBoardHeight, showLines, onParticlesRendered]);
 
     return (

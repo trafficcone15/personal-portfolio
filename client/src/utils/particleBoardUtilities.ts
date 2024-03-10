@@ -10,7 +10,6 @@ const clampVelocity = (velocity: number, speedFactor: number) => {
   return velocity >= 0 ? clampedVelocity : -clampedVelocity;
 };
 
-
 export const setupNodes = (svg: d3.Selection<any, unknown, null, undefined>, particles: Particle[]) => {
   const nodes = svg.selectAll('.node')
     .data(particles)
@@ -56,8 +55,6 @@ export const moveNodes = (nodes: d3.Selection<SVGGElement, Particle, any, unknow
     d3.select(this).attr('transform', `translate(${d.x}, ${d.y})`);
   });
 };
-
-
 
 export const handleCollisions = (particles: Particle[]) => {
   const nodes = particles;

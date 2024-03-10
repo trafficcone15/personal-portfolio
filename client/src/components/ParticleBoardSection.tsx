@@ -67,6 +67,7 @@ const ParticleBoardSection = () => {
                     originalParticlesRef={originalParticlesRef}
                     particleBoardWidth={particleBoardWidth}
                     particleBoardHeight={particleBoardHeight}
+                    particleSpeedFactor={particleSpeedFactor}
                 />
             )}
             <div className="welcome-section">

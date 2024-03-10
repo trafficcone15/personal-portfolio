@@ -10,7 +10,6 @@ const useParticleBoard = (apiUrl: string, svgContainerRef: React.RefObject<HTMLD
     // Adjust particleSpeedFactor to control particle speed (1 = normal, >1 = faster, <1 = slower)
     const particleSpeedFactor = 2;
 
-
     const debounce = <F extends (...args: any[]) => void>(
         func: F,
         delay: number
@@ -21,7 +20,7 @@ const useParticleBoard = (apiUrl: string, svgContainerRef: React.RefObject<HTMLD
             debounceTimer = setTimeout(() => func.apply(this, args), delay);
         };
     };
-
+    
     useEffect(() => {
         // This hook will make the board responsive
 
@@ -57,6 +56,7 @@ const useParticleBoard = (apiUrl: string, svgContainerRef: React.RefObject<HTMLD
                     vy: (Math.random() - 0.5) * 2 * particleSpeedFactor,
                     color: `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 1)`
                 }));
+
                 if (fetchedParticles)
                     setParticles(fetchedParticles);
                 originalParticlesRef.current = fetchedParticles;

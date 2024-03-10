@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Button, Checkbox, CircularProgress, FormControlLabel, FormGroup, TextField, Dialog, DialogTitle, DialogActions } from '@mui/material';
 import axios from 'axios';
 
-const ParticleBoardForm = ({ onHideLines, setParticles, particles, originalParticlesRef, particleBoardWidth, particleBoardHeight }: ParticleBoardForm) => {
+const ParticleBoardForm = ({ onHideLines, setParticles, particles, originalParticlesRef, particleBoardWidth, particleBoardHeight, particleSpeedFactor }: ParticleBoardForm) => {
     const [name, setName] = useState('');
     const [userId, setUserId] = useState<string | null>(null);
     const [userHasSubmitted, setUserHasSubmitted] = useState(false);
@@ -37,7 +37,7 @@ const ParticleBoardForm = ({ onHideLines, setParticles, particles, originalParti
 
     const handleSubmit = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
-        
+
         if (!validateForm()) {
             return;
         }
@@ -85,8 +85,8 @@ const ParticleBoardForm = ({ onHideLines, setParticles, particles, originalParti
                             ...newParticle,
                             x: Math.random() * particleBoardWidth,
                             y: Math.random() * particleBoardHeight,
-                            vx: (Math.random() - 0.5) * 2,
-                            vy: (Math.random() - 0.5) * 2,
+                            vx: (Math.random() - 0.5) * 2 * particleSpeedFactor,
+                            vy: (Math.random() - 0.5) * 2 * particleSpeedFactor,
                             color: `rgba(${Math.random() * 255}, ${Math.random() * 255}, ${Math.random() * 255}, 1)`
                         }
                     ]);
